@@ -14,6 +14,14 @@ const VK_API_VERSION = process.env.VK_API_VERSION;
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN; // Из настроек сообщества
 const GROUP_ID = process.env.GROUP_ID; // ID группы (цифры или shortname)
 
+app.get('/', async(req, res)=>{
+    try {
+        res.json({success: true, data: "Hello worls"})
+    } catch (error) {
+        console.log(error + "on /")
+    }
+    
+})
 // Роут для получения постов
 app.get('/api/vk/posts', async (req, res) => {
   try {
