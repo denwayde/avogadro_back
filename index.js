@@ -36,7 +36,7 @@ app.get('/api/vk/posts', async (req, res) => {
       },
     });
 
-    const posts = response.data.response.items;
+    const posts = response?.data?.response?.items;
     res.json({ success: true, posts});
   } catch (error) {
     console.error('VK API Error:', error.response?.data || error.message);
